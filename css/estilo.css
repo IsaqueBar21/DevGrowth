@@ -1,8 +1,3 @@
-/* importações sub páginas */
-@import url(sobre.css);
-@import url(download.css);
-@import url(contato.css);
-
 /* Estilização Geral */
 
 @font-face {
@@ -38,11 +33,38 @@
     }
 }
 
+/* Media jquery do Home*/
+
+/* CSS media query dentro de um stylesheet */
+@media (max-width: 1700px) {
+    #esquerda {
+        display: none;
+    }
+
+    #direita{
+        display: none;
+    }
+  }
+
+
+  @media (max-width: 500px) {
+    #esquerda {
+        display: none;
+    }
+
+    #direita{
+        display: none;
+    }
+
+    #centro {
+        text-align: left;
+        width: 650px;
+        margin: 10px auto;
+    }
+  }
+
 .fundo-home {
-    background: black url(../imagens/background-home.png) no-repeat;
-    background-size: 120%; /* Faz a imagem de fundo cobrir todo o elemento */
-    background-position-x: -270px ;
-    background-position-y: -250px ;
+    background: black;
 }
 
 .fundo-home2 {
@@ -99,23 +121,36 @@
 /* PRINCIPAL / CONTEUDO */
 
 .container {
-    border: 2px solid green;
     width: 100%; /* Define a largura do contêiner */
-    height: 900px; /* Apenas para exemplo, ajuste conforme necessário */
     background-color: lightgray; /* Apenas para visualização */
     text-align: center; /* Alinha o conteúdo centralmente */
+    height: 900px; /* Apenas para exemplo, ajuste conforme necessário */
 }
-
 
 #conteudo {
-    width: 800px;
-    text-align: center;
-    margin: 0 auto; /* Centraliza horizontalmente */
-    margin-top: 50px; /* Define o espaçamento superior */
-    text-align: left;
-    margin-left: 600px; /* Move a div mais para a esquerda */
-    
+    display: flex;
 }
+
+#esquerda {
+    width: 600px;
+    background: url(../imagens/esquerda.png) no-repeat;
+    background-position: -220px -270px;
+
+}
+
+#centro {
+    text-align: left;
+    width: 650px;
+    margin: 10px auto;
+}
+
+#direita {
+    width: 600px;
+    background: url(../imagens/direita.png) no-repeat;
+    background-position: -600px 160px;
+}
+
+
 
 #conteudo img {
     margin-top: 50px;
@@ -139,7 +174,6 @@
 /* quem somos */
 
 #quem-somos {
-    margin-top: 60px;
     border-top: 1px solid #AFD5AA;
     height: 520px;
     background: #383538;
@@ -209,5 +243,304 @@ span {
     color: #218380;
 }
 
+/* PAGINA SOBRE */
+
+#container-sobre {
+    /* border: 1px solid greenyellow; */
+    position: relative;
+    height: 750px;
+    
+}
+
+#conteudo-sobre-esquerda {
+    padding-top: 250px;
+    /* border: 1px solid red; */
+    width: 800px;
+    height: 750px;
+    float: left;
+    padding-left: 200px;
+}
+
+#conteudo-sobre-esquerda h2 {
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+#conteudo-sobre-esquerda p {
+    color: white;
+    font-family:"Roboto";
+    font-size: 0.9em;
+    margin-bottom: 50px;
+}
+
+#conteudo-sobre-esquerda img {
+    float: left;
+    padding-right: 10px;
+}
+
+#conteudo-sobre-central {
+    position: absolute;
+    left: 650px;
+    width: 550px;
+    text-align: center;
+}
+
+#conteudo-sobre-central .texto-sobre {
+    width: 280px;
+    text-align: center;
+    margin-left: 135px;
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+#conteudo-sobre-direita {
+    padding-top: 250px;
+    position: flex;
+    float: right;
+    padding-right: 100px;
+    height: 750px;
+}
+
+#conteudo-sobre-direita h2 {
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    
+}
+
+#conteudo-sobre-direita h2:hover {
+    animation: animacao-sobre-texto 0.5s 0s forwards;
+    cursor: pointer;
+}
+
+#conteudo-sobre-esquerda h2:hover {
+    animation: animacao-sobre-texto 0.5s 0s forwards;
+    cursor: pointer;
+}
 
 
+#conteudo-sobre-direita p {
+    color: white;
+    font-family:"Roboto";
+    font-size: 0.9em;
+    margin-bottom: 50px;
+    
+}
+
+#conteudo-sobre-direita img {
+    float: left;
+    padding-right: 15px;
+}
+
+/* DONWLOAD */
+
+.fundo-download {
+    background: url(../imagens/background-download.png);
+}
+
+#container-donwload {
+    height: 800px;
+    position: relative;
+}
+
+#imagem-donwload {
+    position: flex;
+    float: left;
+    margin-left: 350px;
+    text-align: center;
+}
+
+#conteudo-download {
+    position: absolute;
+    width: 600px;
+    left: 950px;
+    height: 850px;
+}
+
+#conteudo-download h1 {
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3.8em;
+    margin-bottom: -1px;
+}
+
+#conteudo-download p {
+    color: white;
+    font-family:"Roboto";
+    font-size: 1.0em;
+}
+
+#conteudo-download img {
+    margin-left: 90px;
+}
+
+#menu-footer {
+    background: black;
+    height: 120px;
+}
+
+/* Contato */
+
+#container-contato {
+    border: 1px solid rgb(0, 0, 0);
+    height: 880px;
+}
+
+#container-contato h1 {
+    float: right;
+    margin-right: 300px;
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3.0em;
+}
+
+#caixa-traseira {
+    position: relative;
+    border: 2px solid #AFD5AA;
+    border-radius: 10px;
+    background-color: #383538;
+    height: 500px;
+    margin-top: 250px;
+    z-index: 0; 
+}
+
+#caixa-traseira img {
+    float: left;
+    padding-right: 10px;
+}
+
+#caixa-traseira h2 {
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2.0em;
+    margin-bottom: 1px;
+}
+
+#caixa-traseira p {
+    color: white;
+    font-family:"Roboto";
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    margin-left: 60px;
+    margin-bottom: 1px;
+}
+
+.conteudo-traseira {
+    margin-left: 250px;
+    margin-top: 100px;
+}
+
+
+#caixa-frente {
+    top: 200px;
+    position: absolute;
+    border: 2px solid #AFD5AA;
+    border-radius: 10px;
+    height: 750px;
+    width: 850px;
+    margin-left: 890px;
+    padding-top: 150px;
+    z-index: 1;
+    background-color: #383538;
+}
+
+.contato-form {
+    margin-top: -150px;
+    width: 845px;
+    /* background-color: #f4f4f4; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contato-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 500px;
+  }
+
+  .form-group-medio {
+    margin-bottom: 20px;
+    width: 500px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    width: 500px;
+  }
+
+  .form-group-mensagem {
+    margin-bottom: 20px;
+    width: 800px;
+    height: 200px;
+  }
+  
+  .form-group-mensagem label {
+    display: block;
+    margin-bottom: 5px;
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+  }
+
+  .form-group-mensagem input,
+  .form-group-mensagem textarea {
+    width: 100%;
+    height: 180px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #AFD5AA;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    background-color: #AFD5AA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Russo One";
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #218380;
+  }
