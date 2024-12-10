@@ -294,73 +294,6 @@
             </div> -->
 
         </div> <!-- end features -->
-
-        <div class="testimonials-wrap" data-aos="fade-up">
-
-            <div class="row">
-                <div class="col-full testimonials-header">
-                    <h2 class="display-2">Conheça a Equipe!</h2>
-                    <p>Nosso time é formado por profissionais dedicados a transformar a sua experiência com treino e nutrição em algo único e personalizado. Cada um de nós traz uma combinação de expertise e paixão para garantir que você tenha em mãos uma ferramenta inovadora e fácil de usar.</p>
-                </div>
-            </div>
-
-            <div class="row testimonials">
-
-                <div class="col-full slick-slider testimonials__slider">
-
-                    <div class="testimonials__slide">
-                        <img src="images/avatars/user-03.jpg" alt="Author image" class="testimonials__avatar">
-                        
-                        <p>Nosso time é formado por profissionais dedicados a transformar a sua experiência com treino e nutrição em algo único e personalizado. Cada um de nós traz uma combinação de expertise e paixão para garantir que você tenha em mãos uma ferramenta inovadora e fácil de usar.</p>
-
-                        <div class="testimonials__author">
-                            <span class="testimonials__name">Victor Viana de Souza</span>
-                            <a href="https://www.linkedin.com/in/victor-viana-de-souza-6759bb218/" class="testimonials__link">Linkedin</a>
-                        </div>
-                    </div> <!-- end testimonials__slide -->
-
-                    <div class="testimonials__slide">
-                        <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
-                        
-                        <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                        Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
-                        
-                        <div class="testimonials__author">
-                            <span class="testimonials__name">Isaque Barbosa</span>
-                            <a href="https://www.linkedin.com/in/isaquebar21/" class="testimonials__link">Linkedin</a>
-                        </div>
-                    </div> <!-- end testimonials__slide -->
-
-                    <div class="testimonials__slide">
-                        <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
-                        
-                        <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
-
-                        <div class="testimonials__author">
-                            <span class="testimonials__name">Nickolas Rios</span>
-                            <a href="https://www.linkedin.com/in/nickolas-rios-pereira-b3746822b/" class="testimonials__link">Linkedin</a>
-                        </div>
-                    </div> <!-- end testimonials__slide -->
-
-                    <div class="testimonials__slide">
-                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
-                        
-                        <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
-
-                        <div class="testimonials__author">
-                            <span class="testimonials__name">Higor Passarela</span>
-                            <a href="https://www.linkedin.com/in/higor-passarela-232664229/" class="testimonials__link">Linkedin</a>
-                        </div>
-                    </div> <!-- end testimonials__slide -->
-                    
-                </div> <!-- end testimonials__slider -->
-
-            </div> <!-- end testimonials -->
-
-        </div> <!-- end testimonials-wrap -->
-
     </section> <!-- end s-features -->
 
 
@@ -488,25 +421,19 @@
             </div>
         </div> <!-- end section-header -->
 
-        <div class="row footer__top">
-
+        <!-- <div class="row footer__top">
             <div class="col-full footer__subscribe end">
                 <div class="subscribe-form">
                     <form id="mc-form" class="group" novalidate="true">
-
                         <input type="text" value="" name="NOME" class="name" id="mc-name" placeholder="Seu Nome" required="">
                         <input type="email" value="" name="EMAIL" class="email" id="mc-email" placeholder="Seu Email" required="">
-                        <textarea type="textarea" name="MENSAGEM" class="mensagem" id="mc-mensagem" placeholder="Escreva sua Mensagem."></textarea>
-                        
-                        <input type="submit" name="subscribe" value="Enviar Mensagem">
-            
+                        <textarea name="MENSAGEM" class="mensagem" id="mc-mensagem" placeholder="Escreva sua Mensagem." required></textarea>
+                        <input type="submit" value="Enviar Mensagem">
                         <label for="mc-email" class="subscribe-message"></label>
-            
                     </form>
                 </div>
             </div>
-
-        </div> <!-- end footer__top -->
+        </div> -->
 
         <div class="row footer__bottom">
 
@@ -575,5 +502,40 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+    // Inicializa o EmailJS
+    emailjs.init("JGoNmiPapLZCEO4Mb"); // Substitua "YOUR_USER_ID" pelo seu User ID do EmailJS
+
+    // Obtém o formulário
+    const form = document.getElementById("mc-form");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();  // Evita o envio padrão do formulário
+
+        // Obtém os valores dos campos
+        const nome = document.getElementById("mc-name").value;
+        const email = document.getElementById("mc-email").value;
+        const mensagem = document.getElementById("mc-mensagem").value;
+
+        // Envia o e-mail via EmailJS
+        emailjs.send("service_oxubh3e", "template_oa8j3as", {
+        to_email: "devgrowthofc@gmail.com",  // Definindo o destinatário
+        name: nome,
+        email: email,
+        message: mensagem
+        })
+        .then(function(response) {
+        console.log("E-mail enviado com sucesso", response);
+        alert("Sua mensagem foi enviada com sucesso!");
+        }, function(error) {
+        console.log("Erro ao enviar e-mail", error);
+        alert("Houve um erro ao enviar sua mensagem.");
+        });
+    });
+    </script>
+
 
 </body>

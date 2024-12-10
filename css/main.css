@@ -1018,7 +1018,7 @@ input[type="reset"].btn--primary,
 input[type="button"].btn--primary {
   background: #AFD5AA;
   border-color: #AFD5AA;
-  color: #ffffff;
+  color: #383538;
 }
 
 .btn.btn--primary:hover,
@@ -1033,6 +1033,7 @@ input[type="reset"].btn--primary:focus,
 input[type="button"].btn--primary:focus {
   background: #218380;
   border-color: #218380;
+  color: #FFFF;
 }
 
 /* button modifiers
@@ -4005,7 +4006,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .footer__subscribe #mc-form input[type=submit] {
-  color: #ffffff;
+  color: #383538;
   background: #AFD5AA;
   border-color: #AFD5AA;
   margin-right: 0;
