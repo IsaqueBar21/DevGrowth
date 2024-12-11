@@ -2154,6 +2154,10 @@ input::-moz-focus-inner {
   font-family: "Russo One";
 }
 
+.home-content__left h1 {
+  font-size: 5.4rem;
+}
+
 .home-content__right {
   z-index: 500;
   width: 580px;
@@ -2397,7 +2401,7 @@ html.no-csstransitions .home-content__main {
   }
 
   .home-content h1 {
-    font-size: 6.2rem;
+    font-size: 4.2rem;
   }
 
   .home-content h3 {
@@ -2411,7 +2415,7 @@ html.no-csstransitions .home-content__main {
   .home-content__left {
     width: calc(100% - (570px + 60px));
   }
-
+  
   .home-content__right {
     width: 570px;
   }
@@ -2479,7 +2483,7 @@ html.no-csstransitions .home-content__main {
   }
 
   .home-content h1 {
-    font-size: 7.2rem;
+    font-size: 4.2rem;
     padding-top: 0;
   }
 
